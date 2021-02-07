@@ -1,5 +1,6 @@
 # import library flask
 from flask import Flask, render_template
+import data
 
 app = Flask(__name__)
 app.jinja_env.filters["zip"] = zip
@@ -7,12 +8,7 @@ app.jinja_env.filters["zip"] = zip
 
 @app.route("/")
 def index():
-    # data dalam bentuk dictionary / json
-    dataJson = {
-        "no": [1, 2, 3, 4, 5],
-        "buah": ["mangga", "apel", "semangka", "alpukat", "jeruk"],
-        "hewan": ["ayam", "kucing", "gajah", "elang", "rusa"],
-    }
+    dataJson = data.data
     return render_template("index.html", data=dataJson)
 
 

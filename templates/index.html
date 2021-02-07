@@ -10,14 +10,16 @@
     <table>
         <tr>
             <th>No</th>
-            <th>Nama buah</th>
-            <th>Nama hewan</th>
+            <th>sentimen</th>
+            <th>tweet</th>
+            <th>tweet_processing</th>
         </tr>
-        {% for nomor_kolom, buah, hewan in data["no"] | zip(data["buah"], data["hewan"]) %}
+        {% for item in data %}
         <tr>
-            <td>{{ nomor_kolom }}</td>
-            <td>{{ buah }}</td>
-            <td>{{ hewan }}</td>
+            <td>{{ item[""] }}</td>
+            <td>{{ item["sentimen"] }}</td>
+            <td>{{ item["tweet"] }}</td>
+            <td>{{ item["tweet_processing"] }}</td>
         </tr>
         {% endfor %}
     </table>
